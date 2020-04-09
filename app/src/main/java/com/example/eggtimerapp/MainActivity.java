@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void timerReset() {
         //defines what happens whe the timer is true
-        textViewStart.setText("0:30");
-        seekBarTime.setProgress(30);
+        textViewStart.setText("01:00");
+        seekBarTime.setProgress(60);
         seekBarTime.setEnabled(true);
         countDownTimer.cancel();
         buttonStart.setText("START");
@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         if (counterIsActive) {
 
             timerReset();
-
         }else {
             counterIsActive = true;
             //the plus 100 is to combate latancy
@@ -97,8 +96,9 @@ public class MainActivity extends AppCompatActivity {
         //Sets the max value for the seek bar
         seekBarTime.setMax(600); //10 minutes
         //sets the current progress when the app starts
-        seekBarTime.setProgress(30); //30 seconds
-
+        seekBarTime.setProgress(60); //30 seconds
+        //sets text
+        textViewStart.setText("01:00");
 
         //Opens the seek bar listener methods
         seekBarTime.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
